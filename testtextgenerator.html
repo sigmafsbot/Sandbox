@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Тестовая страница с ебучими квадратами по интервалу</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+		<div id="div" style="width:10px;height:10px;border:0px solid #000;">
+			<p id="bukovki"></p>
+            <script>
+				function generateText () {
+					var text = Math.random().toString(36).substring(7);
+					text = text.replace(/[0-9]/g, '')
+			
+					return text
+				}
+			
+				function duplicate() {
+					var newPara = document.createElement('p');
+					newPara.innerHTML = generateText();//sqr.cloneNode(true);
+					document.body.appendChild(newPara);
+				}
+				
+				setInterval(function() {duplicate()}, 500);
+            </script>
+        </div>
+    </body>
+</html>
+
+
+
