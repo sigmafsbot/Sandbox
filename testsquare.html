@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Тестовая страница с ебучими квадратами по интервалу</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+		<div id="square" style="width:10px;height:10px;border:2px solid #000;">
+            <script>
+				function duplicate() {
+					var sqr = document.getElementById('square');
+					var cln = sqr.cloneNode(true);
+					document.body.appendChild(cln)
+				}
+				
+				setInterval(function() {duplicate()}, 500);
+            </script>
+        </div>
+    </body>
+</html>
+
+
+
