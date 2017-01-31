@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Тестовая страница по заказу Егорки</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+		<td colspan=2 align=center><b>Quadratic Equation:<br>Ax<sup>2</sup> + Bx + C = 0</b></td>
+		<form id="ebuchieNumbers">
+			Enter A: <input type="text" name="First Element" id="firstE" value="0"><br>
+			Enter B: <input type="text" name="Second Element" id="secondE" value="0"><br>
+			Enter C: <input type="text" name="Third Element" id="thirdE" value="0"><br>
+		</form>
+	
+		<button onclick="solveEq()">Solve</button> 
+	
+		<p id="result"></p>
+
+		<script>
+			function solveEq() {
+				var a = document.getElementById('firstE').value;
+				var b = document.getElementById('secondE').value;
+				var c = document.getElementById('thirdE').value;
+				var discr = (b**2) - (4*a*c);
+			if (a == 0) {
+				document.getElementById("result").innerHTML = "It's not a quadratic equasion, you twat.";
+				return
+				}
+		
+			else if (discr < 0) {
+				document.getElementById("result").innerHTML = "There's no solution for your shit. Fuck off.";
+			}
+		
+			else {
+				sol1 = ((-b-Math.sqrt(discr))/(2*a)).toFixed(3);
+				sol2 = ((-b+Math.sqrt(discr))/(2*a)).toFixed(3);
+				document.getElementById("result").innerHTML = "First solution is: " + sol1 + ", and second is: " + sol2;
+			}
+			}
+		</script>
+	
+    </body>
+</html>
